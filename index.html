@@ -18,39 +18,14 @@
         </ul>
     </div>
     <div class="container">
-        <div id="text-box">
-            <h1 class="page-name">Zilucyfer Store</h1>
             <video id="video" controls></video>
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Taruh link nobarnya disini ⭐" id="typical">
-                <button class="buttonin" type="button" id="play-btn">Play</button>
-            </div>
             <div class="resolution-options">  
                 <ul>
-                    <li><button class="resolution-button" onclick="setResolution('Paling HD')">Paling HD</button></li>
-                    <li><button class="resolution-button" onclick="setResolution('HD')">HD</button></li>
                     <li><button class="resolution-button" onclick="refreshPlayer()">Refresh Video</button></li>
                 </ul>
             </div>
         </div>
     </div>
-    <script>
-        function setResolution(resolution) {
-            var link = document.getElementById("typical").value;
-            var videoUrl;
-            if (resolution === 'Paling HD') {
-                videoUrl = link;
-            } else if (resolution === 'HD') {
-                videoUrl = link.replace(/\.m3u8$/, '_1.m3u8');
-            }
-            document.getElementById("video").src = videoUrl;
-        }
-        
-        function refreshPlayer() {
-            // Lakukan sesuatu untuk refresh video player
-            console.log("Refreshing video player...");
-        }
-    </script>
      <script src="main.js"></script>
 </body>
 </html>
