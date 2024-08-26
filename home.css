@@ -79,6 +79,20 @@ body {
     text-underline-offset: 10px;
 }
 
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-control {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
 .resolution-options ul {
     list-style: none;
