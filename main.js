@@ -38,42 +38,28 @@ function playM3u8(url) {
     }
 }
 
-function playPause() {
-    const video = document.getElementById('video');
-    video.paused ? video.play() : video.pause();
+function refreshPlayer() {
+    location.reload();
 }
 
-function volumeUp() {
-    const video = document.getElementById('video');
-    if (video.volume <= 0.9) video.volume += 0.1;
-}
-
-function volumeDown() {
-    const video = document.getElementById('video');
-    if (video.volume >= 0.1) video.volume -= 0.1;
-}
-
-function seekRight() {
-    const video = document.getElementById('video');
-    video.currentTime += 5;
-}
-
-function seekLeft() {
-    const video = document.getElementById('video');
-    video.currentTime -= 5;
-}
-
-function vidFullscreen() {
-    const video = document.getElementById('video');
-    if (video.requestFullscreen) {
-        video.requestFullscreen();
-    } else if (video.mozRequestFullScreen) {
-        video.mozRequestFullScreen();
-    } else if (video.webkitRequestFullscreen) {
-        video.webkitRequestFullscreen();
+function changeResolution(resolution) {
+    const url = $('#typical')[0].value;
+    let modifiedUrl = url;
+    switch (resolution) {
+        case 'low':
+            modifiedUrl = url.replace('high', 'low').replace('medium', 'low');
+            break;
+        case 'medium':
+            modifiedUrl = url.replace('high', 'medium').replace('low', 'medium');
+            break;
+        case 'high':
+            modifiedUrl = url.replace('low', 'high').replace('medium', 'high');
+            break;
     }
+    playM3u8(modifiedUrl);
 }
 
+// Additional functions for controlling video playback with keyboard shortcuts
 Mousetrap.bind('space', playPause);
 Mousetrap.bind('up', volumeUp);
 Mousetrap.bind('down', volumeDown);
