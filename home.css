@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111320;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#text-box {
+    margin-top: 400px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.page-name {
+    margin-bottom: 1em;
+    color: #7a7f8b ;
+    font-size: 150px;
+    text-align: center;
+    text-decoration: underline wavy rgb(255, 255, 255) 5px;
+    text-underline-offset: 10px;
+    font-size: 2.5em;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px; /* Space between input and button */
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, rgba(75,89,248,1) 0%, rgba(234,159,243,1) 50%, rgba(242,147,253,1) 100%);
+    background-size: 200% 200%; /* Larger background to allow for animation */
+    border-radius: 10px;
+    color: white;
+    width: 200px;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.5s ease;
+    animation: gradientAnimation 3s ease infinite; /* Apply the animation */
+}
+
+/* Keyframes for the gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+.btn-primary:hover {
+    background-color: rgb(183, 76, 130);
+}
+
+#video {
+    position: absolute;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
